@@ -1,13 +1,150 @@
+/* index.css */
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.blog-list {
+    margin-bottom: 40px;
+}
+
+.blog-list h1 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.blog-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(250px, 1fr)
+    ); /* Adjust for more even column distribution */
+    gap: 30px; /* Add consistent gap between cards */
+}
+
+/* Set equal height for cards */
+.blog-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 250px; /* Set a minimum height for all cards */
+}
+
+.blog-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.blog-list a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+    flex-grow: 1; /* Ensures title takes up available space */
+}
+
+.blog-list a:hover {
+    color: #0056b3;
+}
+
+.blog-list .author {
+    color: #555;
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 10px; /* Space between the title and author */
+}
+
+/* Blog detail styling */
+.blog-detail {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-detail h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.blog-detail h2 {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.blog-detail span {
+    color: #999;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.blog-detail p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.back-link {
+    margin-bottom: 20px;
+}
+
+.back-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    color: #0056b3;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    margin: 0 10px;
+    font-size: 18px;
+    color: #333;
 }
